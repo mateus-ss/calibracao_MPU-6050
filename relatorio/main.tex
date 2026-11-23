@@ -1,0 +1,79 @@
+\documentclass[12pt, a4paper]{article}
+
+% Pacotes essenciais:
+
+% CONFIGURAÇÕES DE IDIOMA E CODIFICAÇÃO
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[brazilian]{babel}
+
+% FORMATAÇÃO E ESTRUTURA DO DOCUMENTO
+\usepackage{geometry}
+\usepackage{setspace}
+\usepackage{float}
+\usepackage{subcaption}
+
+% MATEMÁTICA E EXPRESSÕES
+\usepackage{amsmath}
+
+% TABELAS
+\usepackage{booktabs}
+\usepackage{tabularx}
+\usepackage{array}
+\usepackage{longtable}
+
+% FIGURAS E GRÁFICOS
+\usepackage{graphicx}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.18}
+
+% ALGORITMOS E PSEUDOCÓDIGO
+\usepackage[ruled,vlined,linesnumbered]{algorithm2e}
+
+% Tradução dos elementos do algoritmo
+\SetAlgorithmName{Algoritmo}{algoritmo}{Lista de Algoritmos}
+\SetKwInput{KwIn}{Entrada}
+\SetKwInput{KwOut}{Saída}
+
+% HIPERLINKS E REFERÊNCIAS
+\usepackage{hyperref}
+
+
+%comandos editaveis
+\input{Editaveis}
+
+% Configuração das margens
+\geometry{a4paper, left=3cm, top=3cm, right=2cm, bottom=2cm}
+
+% Configuração de cabeçalho e rodapé
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhf{} % Limpa os cabeçalhos e rodapés atuais
+\lhead{UnB} % Canto superior esquerdo
+\rhead{\disciplina} % Canto superior direito
+%\lfoot{Universidade de Brasília} % Canto inferior esquerdo
+\rfoot{\thepage} % Canto inferior direito
+\renewcommand{\headrulewidth}{0.4pt}
+%\renewcommand{\footrulewidth}{0.4pt}
+
+\begin{document}
+
+% --- Título ---
+\begin{center}
+    {\Large \textbf{ \titulo }}\\[0.5cm]
+    {\large \aluno}\\[0.2cm]
+    {\normalsize \today}\\[1cm]
+\end{center}
+
+% --- Seções do Relatório ---
+\input{SECOES/resumo}
+\input{SECOES/introducao}
+\input{SECOES/desenvolvimento}
+\input{SECOES/Resultado&Discurssao}
+\input{SECOES/conclusao}
+
+% --- Bibliografia Simples ---
+\bibliographystyle{IEEEtran}
+\bibliography{referencias}
+
+\end{document}

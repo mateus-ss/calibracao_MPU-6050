@@ -1,0 +1,16 @@
+\section{Introdução}
+
+A medição de inclinação angular é essencial em aplicações de robótica, monitoramento estrutural, estabilização de plataformas e controle industrial \cite{1.doebelin2004}. Acelerômetros microeletromecânicos (MEMS) de baixo custo
+viabilizam essa medição em regime estático pela projeção do vetor gravidade sobre três eixos ortogonais \cite{2.pedley2013}. Contudo, imperfeições de fabricação, soldagem e estresse mecânico introduzem erros sistemáticos de deslocamento de zero (\textit{offser}) e sensibilidade (\textit{ganho}) que degradam os cálculos trigonométricos se não compensados por uma calibração estática criteriosa \cite{3.fisher2010}, \cite{4.ochoa2026}.
+
+Neste trabalho, foi realizado a calibração e validação de um onclinômetro de um grau de liberdade com o MPU-6050 e o ESP32 DevKit \cite{4.ochoa2026}. OS objetivos rdprvcíficos são: 
+
+\begin{enumerate}
+    \item selecionar a escala e a filtragem digital adequadas;
+
+    \item estimar ganho e offset nos três eixos pelo método das seis posições ($\pm 1$ \text{ g})
+
+    \item calcular o ângulo de inclinação em tempo real com embasamento na literatura;
+
+    \item a curva de erro frente a um transferidor acoplado a um mecanismo impresso em 3D.
+\end{enumerate}

@@ -1,0 +1,15 @@
+\section{Conclusões}
+
+O processo de calibração estática nas seis posições permitiu identificar e compensar um desvio sistemático no eixo X do MPU-6050 ($+1,32212$ \text{ g}), justificando tecnicamente a operação na faixa de $\pm4 \text{ g}$ para exitar saturação e entregando ganhos experimentais a menos de 1,5\% do valor unitário em todos os eixos. A validação pós-calibração na horizontal confirmou a normalização do vetor gravidade ($|A| \approx 1,005 \text{ g}$), e o firmware embarcado no ESP32 opera com alta estabilidade temporal (desvio padrão médio de $0,129°$), estando apto para demonstração ao vivo em sala de aula. 
+
+Embora a resposta angular do sistema tenha apresentado excelente linearidade ($R^2 = 0,9989$) e baixo erro na vizinhança da horizontal (inferior a $2°$ em $90°$), o ensaio evidenciou que a exatidão global (RMSE = $7,228°$) foi limitada principalmente pela rigidez do cabeamento, pelas folgas da articulação impressa em 3D e pela leitura visual no transferidor. Como perspectivas de melhorias futuras, propõem-se:
+
+\begin{enumerate}
+    \item substituir os jumpers rígidos por fios flexíveis de silicone ou incorporar transmissão sem fio (Wi-Fi/Bluetooth nativos do ESP32) com bateria leve acoplada, eliminando torques parasitas;
+
+    \item adicionar um travamento rígido no eixo secundário, um ponteiro tipo agulha alinhado ao pino central e um encoder óptico rotativo como padrão de referência de maior resolução;
+
+    \item evoluir da calibração independente por eixo para uma matriz de calibração 3×3 capaz de corrigir desalinhamentos não ortogonais entre os eixos internos do MEMS e a carcaça;
+
+    \item integrar o giroscópio interno do MPU-6050 por meio de um Filtro Complementar ou Filtro de Kalman, viabilizando medições angulares precisas também em regimes dinâmicos sujeitos a acelerações lineares externas.
+\end{enumerate}
